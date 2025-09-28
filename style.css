@@ -1,0 +1,268 @@
+/* Reset and Base Styles (from your old CSS, enhanced) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Your original font */
+    background: linear-gradient(120deg, #71c0bb, #4e6688); /* Your gradient */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; /* Your original body color */
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Background Animation (subtle shift using your colors for dynamism) */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #71c0bb, #4e6688, #332d56, #71c0bb);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    z-index: -1;
+    opacity: 0.1; /* Keep subtle to not overpower your main gradient */
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+.container {
+    width: 80%;
+    margin: 30px auto;
+    background: #332d56; 
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #222; 
+    color: #fff;
+}
+
+
+.form-container {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+    width: 300px; 
+    margin: 100px auto; 
+    background: #332d56; 
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 10px #222; 
+    max-width: 400px; 
+}
+
+.form-container.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.form-card {
+    animation: fadeInUp 0.8s ease-out;
+    color: #fff; 
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+h2 {
+    text-align: center; 
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    animation: pulse 2s infinite; 
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.form-subtitle {
+    color: #dfeba9ff; 
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+
+.input-group {
+    margin-bottom: 1.5rem; 
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%; 
+    padding: 10px; 
+    margin: 8px 0; 
+    border: none; 
+    border-radius: 6px; 
+    background: rgba(255, 255, 255, 0.1); 
+    color: #fff; 
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: #ccc; 
+}
+
+.input-group input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 2px #71c0bb; /* Teal glow using your color */
+    transform: translateY(-2px); 
+
+
+button, .btn-primary {
+    display: inline-block;
+    padding: 10px; 
+    margin: 5px; 
+    text-decoration: none;
+    border-radius: 8px; 
+    background: #71c0bb; 
+    color: #fff; 
+    font-weight: bold; 
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(113, 192, 187, 0.3); 
+    background: linear-gradient(135deg, #71c0bb, #4e6688); 
+}
+
+a.btn {
+    display: inline-block;
+    background: #e3eeb2; /* Your light green for links/buttons */
+    color: #333;
+    width: auto;
+}
+
+a.btn-danger {
+    background: #c0392b; 
+    color: white;
+}
+
+a.btn:hover, button:hover {
+    transform: scale(1.02); 
+}
+
+
+.form-link {
+    font-size: 0.9rem;
+    color: #d5dd7eff; 
+    margin-top: 1rem;
+}
+
+.form-link a {
+    color: #71c0bb; /* Teal link color */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.form-link a:hover {
+    color: #e3eeb2; /* Light green on hover */
+    text-decoration: underline;
+}
+
+/* Table Styles (your original, unchanged) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    color: #fff; /* White for dark theme */
+}
+
+table th {
+    background: #71c0bb; /* Your header color */
+}
+
+/* Responsive Design (new enhancement for mobile) */
+@media (max-width: 480px) {
+    .form-container {
+        width: 90%;
+        margin: 50px auto;
+        padding: 15px;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    table {
+        font-size: 0.9rem;
+    }
+}
+
+/* Additional Interactivity (hover for inputs, consistent with new design) */
+    .input-group input[type="file"] {
+        padding: 8px;
+        background: rgba(255, 255, 255, 0.1);
+    }
+    .input-group input[type="file"]::-webkit-file-upload-button {
+        background: #71c0bb;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+    
+
+  .image-preview {
+      text-align: center;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      margin-bottom: 10px;
+  }
+  
